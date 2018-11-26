@@ -1,40 +1,85 @@
+html,body {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  padding: 0;
+}
+
+nav {
+  background-color: cornflowerblue;
+  color: white;
+  padding: 1rem;
+}
+
+.chart {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  margin: auto;
+}
+
 .tooltip {
   position: absolute;
-  width: 135px;
-  height: 60px;
-  padding: 2px;
-  padding-top: 8px;
+  width: 180px;
+  height: 80px;
+  padding: 0.25rem;
   font: 12px sans-serif;
   color: white;
   text-align: center;
-  background: #551aaf;
+  background: black;
+  opacity: 0.7;
   border: 0;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.circle {
+  fill: cornflowerblue;
+  opacity: 0.7;
+}
+
+.circle:hover {
+  stroke: gray;
+  opacity: 1;
+}
+
+.circle-text {
+  fill: white;
+  font-size: 10px;
+  pointer-events: none;
+  text-anchor: middle;
+}
+
+.tooltip p {
+  margin: 0.25rem;
 }
 
 .axis-text {
   font-family: sans-serif;
-  font-weight: bold;
-  fill: #551aaf;
   text-anchor: middle;
-}
-
-.active {
-  font-weight: bold;
-  fill: #000;
-  fill: #551aaf;
-  transition: fill 0.3s ease-out;
-  text-anchor: middle;
+  cursor: pointer;
+  user-select: none;
 }
 
 .inactive {
-  font-weight: lighter;
-  fill: #551aaf;
+  fill: gray;
   transition: fill 0.3s ease-out;
-  text-anchor: middle;
 }
 
-.inactive:hover {
-  fill: #e75480;
-  cursor: pointer;
+.active {
+  pointer-events: none;
+}
+
+.inactive:hover,.active {
+  font-weight: bold;
+  fill: black;
+  transition: fill 0.3s ease-out;
 }
